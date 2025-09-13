@@ -3,8 +3,12 @@
     <!-- MDK² role: Programmable Block script -->
     <Mdk2ProjectType>mdk2pbscript</Mdk2ProjectType>
 
-    <!-- All standard knobs (TargetFramework, LangVersion, RootNamespace, etc.)
-         are inherited from the repo's Directory.Build.props -->
+    <!-- All standard knobs (TargetFramework, LangVersion, RootNamespace, etc.) -->
+    <LangVersion>6</LangVersion>
+    <TargetFramework>net48</TargetFramework>
+    <RootNamespace>IngameScript</RootNamespace>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
   </PropertyGroup>
 
   <ItemGroup>
@@ -19,9 +23,7 @@
     <PackageReference Include="Mal.Mdk2.References" Version="2.2.4" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\Mixins\VIOS.Core\VIOS.Core.csproj" />
-  </ItemGroup>
+  <Import Project="../../Mixins/VIOS.Core/VIOS.Core.projitems" Label="Shared" />
 
   <ItemGroup>
     <None Remove="Instructions.readme" />
